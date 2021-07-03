@@ -30,7 +30,16 @@ config.Routes.MapHttpRoute(
 **end config url cho api
 ```
 
-## 3. Sử dụng Ngrok để public localhost
+## 3. Test API
+```
+http://localhost:44313/api/APIDemo/Get
+http://localhost:44313/api/save-invoice
+```
+## 4. Tạo chatbot Chatfuel
+- Home: https://chatfuel.com/
+- API docs: https://docs.chatfuel.com/en/articles/735122-json-api
+
+## 5. Sử dụng Ngrok để public localhost
 
 - Bước 1: Tải ngrok tại: https://ngrok.com/
 - Bước 2: Đăng ký và lấy token: https://dashboard.ngrok.com/auth
