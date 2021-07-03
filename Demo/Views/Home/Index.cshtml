@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Demo.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>SẢN PHẨM</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Images)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <img src="/images/@item.Images" width="40" height="50" />
+            </td>
+        </tr>
+    }
+
+</table>
+<br /><br />
+<h2>TÀI KHOẢN</h2>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Acc
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.Account)
+    {
+        <tr>
+            <td>
+                @item.UserID
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Account1
+            </td>
+            <td>
+                @item.Password
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br/><br />
+<h2>HÓA ĐƠN</h2>
+<table class="table">
+    <tr>
+        <th>
+            Số hóa đơn
+        </th>
+        <th>
+            Ngày tạo
+        </th>
+        <th>
+            Người mua
+        </th>
+        <th>
+            Đơn hàng (SP/SL)
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.Invoice)
+    {
+        <tr>
+            <td>
+                @item.InvoiceNo
+            </td>
+            <td>
+                @item.CreateDate
+            </td>
+            <td>
+                @item.Account.Name
+            </td>
+            <td>
+                @{
+                    var sp = "";
+                    foreach (var pr in item.InvoiceDetails)
+                    {
+                        sp = sp + pr.Product.Product1 + " / SL: " + pr.Quantity + "\n";
+                    }
+                }
+
+                <pre>@sp</pre>
+            </td>
+        </tr>
+    }
+
+</table>
