@@ -38,6 +38,7 @@ http://localhost:44313/api/save-invoice
 ## 4. Tạo chatbot Chatfuel
 - Home: https://chatfuel.com/
 - API docs: https://docs.chatfuel.com/en/articles/735122-json-api
+- Một số chatbot có chức năng tương tự, có thể tham khảo: Messnow (https://messnow.com/), Aha Chat (https://ahachat.com/), Many Chat (https://manychat.com/)
 
 ## 5. Sử dụng Ngrok để public localhost
 
